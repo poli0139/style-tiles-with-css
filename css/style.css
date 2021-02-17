@@ -19,10 +19,10 @@ use the fonts in other ways in the font hierarchy etc. */
   --white-space: 1rem;
 }
 
-a:hover {
+/*a:hover {
   color: var(--color-4);
   text-decoration-line: overline;
-}
+}*/
 html {
   font-size: 100%;
   font-family: var(--primary-font);
@@ -127,6 +127,7 @@ ul li:last-child {
   width: 15rem;
   height: 22.5rem;
   position: relative;
+  cursor: pointer;
 }
 .image {
   z-index: 1;
@@ -151,47 +152,49 @@ ul li:last-child {
   transition: all 1s;
 }
 .preview:hover .name {
-  animation: showName;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-  animation-duration: 1s;
+  opacity: 1;
+  transition: all 1s;
 }
-@keyframes showName {
-  to {
-    opacity: 1;
-  }
-}
-/*button {
-  padding: 1rem;
-  border: none;
-  border-radius: 10px;
-  background-color: var(--bg-color);
+
+.icon {
+  position: relative;
+  width: 5rem;
+  height: 7rem;
   text-align: center;
+  margin: 1rem;
+  cursor: pointer;
+}
+.category {
+  font: var(--primary-font);
+  color: var(--color-4);
+  font-weight: bolder;
+  letter-spacing: 1px;
+  padding: 0;
+  text-decoration-line: none;
+}
+.icon:hover .category {
+  text-decoration-line: underline;
+}
+
+.link-sample {
+  position: relative;
+  margin: 2rem;
   text-decoration: none;
-  font: bold 1.25em/1 var(--primary-font);
+  font: var(--primary-font);
   letter-spacing: 1px;
   color: var(--color-4);
   cursor: pointer;
-  margin: 0 1rem 1rem 0;
+  z-index: 2;
+  font-weight: bolder;
+  transition: all 0.5s;
+  background-color: var(--bg-color);
 }
 
-button::after {
-  content: "";
-  background: var(--bg-color);
-  border: solid red 3px;
-  mix-blend-mode: exclusion;
-  width: calc(100% + 20px) ;
-  height: 100%;
-  position: absolute;
- bottom: -4px;
-  left: -10px;
-  transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+.link-sample:hover {
+  background-color: var(--color-2);
+  color: white;
+  transition: all 0.5s;
 }
-
-button:hover::after {
-  height: calc(100% + 8px);
-}*/
-
 .typography-main {
   color: var(--main-text-color);
 }
@@ -224,12 +227,12 @@ em {
   font-style: italic;
 }
 
-a {
+/*a {
   font-family: var(--primary-font);
   color: var(--color-3);
   font-weight: bold;
   text-decoration: none;
-}
+}*/
 
 p[class*="font-details-"] {
   margin-top: 0.5rem;
